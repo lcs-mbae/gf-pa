@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class monkey extends Actor
+public class Monkey extends Actor
 {
     /**
      * Act - do whatever the monkey wants to do. This method is called whenever
@@ -37,5 +37,13 @@ public class monkey extends Actor
      {
          setLocation(getX(), getY()+3);
      }
+    }
+    private void checkIfDamaged()
+    {
+        if (isTouching(worm.class))
+        {
+            getWorld().showText("Game Over",450,300);
+            Greenfoot.stop();
+        }
     }
 }
