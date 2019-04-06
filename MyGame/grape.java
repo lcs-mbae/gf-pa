@@ -14,6 +14,10 @@ public class Grape extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        if (isTouching(Monkey.class))
+        {
+        getWorld().showText("You Won", 450,300);
+        Greenfoot.stop();
+        }
     }    
 }

@@ -22,7 +22,7 @@ public class Jungle extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 600, 1); 
         themonkey = new Monkey();
-        this.addObject(themonkey,400,530);
+        this.addObject(themonkey,400,600);
         
     }
     public void act()
@@ -33,7 +33,14 @@ public class Jungle extends World
         {
             Line();
         }
-        
+        if (frames < 3)
+        {
+            cupcake();
+        }
+        if (frames < 2)
+        {
+            Grape();
+        }
         
        
         
@@ -62,7 +69,7 @@ public class Jungle extends World
     
     private void FirstFood(int x)
     {
-        int y = 100 * frames;
+        int y = 100 ;
         int selection = Greenfoot.getRandomNumber(2);
         if (selection == 0)
         {
@@ -130,6 +137,21 @@ public class Jungle extends World
         }
         
     }
+    private void cupcake()
+    {
+        int x = Greenfoot.getRandomNumber(4);
+        this.addObject(new Cupcake(),100 * x + 100,40);
+    }
+    private void Grape()
+    {
+        int x = Greenfoot.getRandomNumber(2);
+        this.addObject(new Grape(),100 * x + 100,40);
+    }
+    
+    
+    
+    
+    
     
     
     

@@ -1,25 +1,24 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Banana here.
+ * Write a description of class Cupcake here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Banana extends Actor
+public class Cupcake extends Actor
 {
     /**
-     * Act - do whatever the Banana wants to do. This method is called whenever
+     * Act - do whatever the Cupcake wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
         if (isTouching(Monkey.class))
         {
-            removeTouching(Banana.class);
-            Greenfoot.playSound("yum.wav");
-            Greenfoot.stop();
-            
+        getWorld().showText("You Lost", 450,300);
+        Greenfoot.stop();
         }
+        
     }    
 }

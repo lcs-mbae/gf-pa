@@ -40,10 +40,11 @@ public class Monkey extends Actor
     }
     private void checkIfDamaged()
     {
-        if (isTouching(worm.class))
+        if (isTouching(Worm.class))
         {
             getWorld().showText("Game Over",450,300);
             Greenfoot.stop();
         }
     }
+    
 }
