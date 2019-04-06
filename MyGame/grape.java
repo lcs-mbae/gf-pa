@@ -1,20 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class monkey here.
+ * Write a description of class grape here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class monkey extends Actor
+public class grape extends Actor
 {
     /**
-     * Act - do whatever the monkey wants to do. This method is called whenever
+     * Act - do whatever the grape wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        
-        
+        // Add your action code here.
     }    
 }
