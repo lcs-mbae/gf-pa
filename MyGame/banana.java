@@ -14,12 +14,17 @@ public class Banana extends Actor
      */
     public void act() 
     {
+        check();
+    }  
+    private void check()
+    {
         if (isTouching(Monkey.class))
         {
-            removeTouching(Banana.class);
-            Greenfoot.playSound("yum.wav");
-            Greenfoot.stop();
+            MyWorld world = (MyWorld) getWorld();
+            world.addScore();
+            getWorld().removeObject(this);
+            
             
         }
-    }    
+    }
 }

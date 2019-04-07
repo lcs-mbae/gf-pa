@@ -12,11 +12,11 @@ public class Monkey extends Actor
      * Act - do whatever the monkey wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int reload = 60;
+    
     public void act() 
     {
         movement();
-        
+        checkIfDamaged();
         
     }    
     private void movement()

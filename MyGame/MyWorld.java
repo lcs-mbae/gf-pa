@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Jungle extends World
+public class MyWorld extends World
 {
   
     
@@ -16,31 +16,30 @@ public class Jungle extends World
      */
     private int frames = 0;
     private Monkey themonkey;
-    
-    public Jungle()
+    public int score = 0;
+    public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 600, 1); 
         themonkey = new Monkey();
         this.addObject(themonkey,400,600);
-        
     }
     public void act()
     {
         time();
+        if (frames < 1)
+        {
+            goal();
+        }
         frames = frames +1;
+        String a = Integer.toString(score);
+        showText(a ,100,40);
+        showText("Score:", 60, 40);
         if (frames < 9)
         {
             Line();
         }
-        if (frames < 3)
-        {
-            cupcake();
-        }
-        if (frames < 2)
-        {
-            Grape();
-        }
+        
         
        
         
@@ -55,6 +54,20 @@ public class Jungle extends World
         showText("Time:", 30,20);
         showText(timeElapsed, 80, 20); 
         }
+        if ((frames / 3600) ==1)
+        {
+            showText("Game Over!:", 430,300);
+            Greenfoot.stop();
+        }
+    }
+    void addScore()
+    {
+        score ++;
+        
+    }
+    int score()
+    {
+        return score;
     }
     private void Line()
     {
@@ -137,27 +150,41 @@ public class Jungle extends World
         }
         
     }
-    private void cupcake()
+    private void goal()
     {
-        int x = Greenfoot.getRandomNumber(4);
-        this.addObject(new Cupcake(),100 * x + 100,40);
+        int x = Greenfoot.getRandomNumber(3);
+        if (x ==0)
+        {
+            this.addObject(new Cupcake(),100,40);
+            this.addObject(new Grape(),450,40);
+            this.addObject(new Cupcake(),800,40);
+        }
+        else if (x == 1)
+        {
+            this.addObject(new Grape(),100,40);
+            this.addObject(new Cupcake(),450,40);
+            this.addObject(new Cupcake(),800,40);
+        }
+        else if (x == 2)
+        {
+            this.addObject(new Cupcake(),100,40);
+            this.addObject(new Cupcake(),450,40);
+            this.addObject(new Grape(),800,40);
+        }
     }
-    private void Grape()
-    {
-        int x = Greenfoot.getRandomNumber(2);
-        this.addObject(new Grape(),100 * x + 100,40);
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
